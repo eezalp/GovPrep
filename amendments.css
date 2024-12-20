@@ -1,0 +1,48 @@
+.mainBox{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.amendmentHolder{
+  box-sizing: border-box;
+  border: 4px, solid, black;
+  border-radius: min(55vw, 55vh)/min(75vw, 75vh);
+
+  padding: 3%;
+
+  width: min(75vw, 75vh);
+  height: min(55vw, 55vh);
+
+  text-align: center;
+  text-anchor: middle;
+  background-color: gray;
+
+  overflow: hidden;
+
+  font-size: min(4vw, 4vh);
+}
+.button{
+  height: min(6vw, 6vh);
+  width: max(10vw, 10vh);
+  background-color: rgb(72, 211, 72);
+  display: flexbox;
+}
+span{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+.numInput{
+  width: min(55vw, 55vh);
+  height: min(8vw, 8vh);
+  font-size: min(5vw, 5vh);
+  text-align: center;
+}
+.incorrects{
+  width: min(55vw, 55vh);
+  text-align: center;
+  border: 2px, solid, black;
+  background-color: gray;
+}
