@@ -130,7 +130,7 @@ const cases = [
   {
     case: "Barron v. Baltimore",
     year: 1833,
-    constitutionalIssue: "Takings Clause",
+    constitutionalIssue: "Eminent Domain",
     vote: "9-0",
     issue: "City's actions causing damage to private property without compensation",
     importance: "Held that the Bill of Rights only applies to the federal government"
@@ -248,6 +248,7 @@ function GetMainCase(){
   while(used.includes(tmpCase)){
     tmpCase = RandRange(0, cases.length - 1);
   }
+  correctAnswer = GetValue(tmpCase);
   used.push(tmpCase);
   return cases[tmpCase];
 }
@@ -282,13 +283,17 @@ function PushAnswer(_case){
 function GenerateAnswers(){
   let answerVals = [GetValue(curCase)];
   let tmpVal = GetValue(GetCase());
-  for(let i = 0; i < 4; i++){
+  for(let i = 0; i < 3; i++){
     while(answerVals.includes(tmpVal)){
       tmpVal = GetValue(GetCase());
     }
     answerVals.push(tmpVal);
   }
 
+
+  if(!answerVals.includes(correctAnswer)){
+    console.log(`${GetValue(curCase)} and ${correctAnswer}`);
+  }
 
   answerCases = Shuffle(answerVals);
   answerCases.forEach((val, i, _)=>{
@@ -378,8 +383,6 @@ function GenerateQuestion(){
         break;
     }
   }
-
-  console.log(correctAnswer);
 
   document.getElementById("question").innerHTML = question;
 
